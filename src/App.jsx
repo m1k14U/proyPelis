@@ -1,6 +1,12 @@
 import axios from "axios";
 import SearchBar from "./components/searchBar";
 import MovieList from "./components/searchMovies";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+import Inicio from "./pages/Inicio";
+import Estrenos from "./pages/Estrenos";
+import Categorias from "./pages/Categorias";
+import Contactos from "./pages/Contactos";
 
 export default function App() {
   const [movies, setMovies] = useState([]);
@@ -26,28 +32,36 @@ export default function App() {
   };
 
   return (
+    <BrowserRouter>
     <div className="layout">
       <header className="header">
         <p id = "title-cin">CINEstereo</p>
         <ul>
             <li className="menu">
-             Inicio
+             <Link to="/">Inicio</Link>
             </li>
             <li className="menu">
-              Estrenos
+              <Link to="/estrenos">Estrenos</Link>
             </li>
             <li className="menu">
-              Categorías
+              <Link to="/categorias">Categorías</Link>
             </li>
             <li className="menu">
-             Contactos
+             <Link to="/contactos">Contactos</Link>
             </li>
         </ul>
         <SearchBar onSearch={searchMovies} />
       </header>
       <main id='main'>
+        <Routes>
+          <Route path="/" element={<Inicio />}/>
+          <Route path="/estrenos" element={<Estrenos />}/>
+          <Route path="/categorias" element={<Categorias />}/>
+          <Route path="/contactos" element={<Contactos />}/>
+        </Routes>
         <MovieList movies={movies} />
       </main>
     </div>
+    </BrowserRouter>
   );
 }

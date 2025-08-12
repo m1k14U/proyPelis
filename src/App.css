@@ -140,9 +140,9 @@ ul li {
 
 .movies-container {
   display: flex;
-  flex-wrap: wrap; /* para que salten a la siguiente línea si no caben */
-  gap: 16px; /* espacio entre películas */
-  justify-content: center; /* centrado horizontal */
+  flex-wrap: wrap;
+  gap: 16px; 
+  justify-content: center; 
   padding: 20px;
 }
 
@@ -170,10 +170,10 @@ ul li {
 
 .img-contsinresult {
   display: flex;
-  flex-direction: column; /* Para que el texto quede debajo de la imagen */
-  align-items: center;    /* Centra horizontalmente */
-  justify-content: center; /* Centra verticalmente */
-  height: 100%;           /* Ocupa todo el alto disponible */
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center; 
+  height: 100%;           
   text-align: center;  
 }
 
