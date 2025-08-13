@@ -194,3 +194,13 @@ ul li {
   letter-spacing: 1px;
   text-shadow: 1.5px 1.5px 2px rgba(131, 122, 97, 0.587);
 }
+
+.header a,
+.header a:visited,
+.header a:active,
+.header a:focus {
+  color: inherit !important;
+  text-decoration: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
