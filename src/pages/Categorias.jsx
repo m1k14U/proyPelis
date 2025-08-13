@@ -1,7 +1,7 @@
 import '../App.css';
 import catego from '../assets/catego.jpg';
 
-export default function Categorias() {
+function Categorias() {
     return (
         <main className='main'>
         <div className='img-contsinresult'>
@@ -10,3 +10,5 @@ export default function Categorias() {
         </main>
     );
 }
+
+export default Categorias();
