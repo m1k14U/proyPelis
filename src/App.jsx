@@ -25,10 +25,10 @@ export default function App() {
 
       if (res.data.Response === "True") {
         setMovies(res.data.Search);
-        setMovies(false);
+        setNotFound(false);
       } else {
         setMovies([]);
-        setMovies(true);
+        setNotFound(true);
       }
     } catch (error) {
       console.error("Error buscando películas:", error);
