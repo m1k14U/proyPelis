@@ -2,6 +2,8 @@ import axios from "axios";
 import SearchBar from "./components/searchBar";
 import MovieList from "./components/searchMovies";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { useState } from "react";
+import "./App.css";
 
 import Inicio from "./pages/Inicio";
 import Estrenos from "./pages/Estrenos";
@@ -11,11 +13,11 @@ import Contactos from "./pages/Contactos";
 export default function App() {
   const [movies, setMovies] = useState([]);
 
-  const searchMovies = async (query) => {
+  async function searchMovies(query) {
     try {
       const res = await axios.get(`https://www.omdbapi.com/`, {
         params: {
-          apikey: "f2c66098", 
+          apikey: "f2c66098",
           s: query
         }
       });
@@ -29,7 +31,7 @@ export default function App() {
       console.error("Error buscando películas:", error);
       setMovies([]);
     }
-  };
+  }
 
   return (
     <BrowserRouter>
