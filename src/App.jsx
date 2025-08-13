@@ -60,12 +60,16 @@ export default function App() {
       </header>
       <main id='main'>
         <Routes>
-          <Route path="/" element={<Inicio />}/>
+          <Route path="/" element={
+            <>
+              <Inicio />
+              <MovieList movies={movies} notFound={notFound} />
+          </>}/>
           <Route path="/estrenos" element={<Estrenos />}/>
           <Route path="/categorias" element={<Categorias />}/>
           <Route path="/contactos" element={<Contactos />}/>
         </Routes>
-        <MovieList movies={movies} notFound={notFound} />
+      
       </main>
     </div>
     </BrowserRouter>
