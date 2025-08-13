@@ -62,7 +62,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={
             <>
-              <Inicio />
               <MovieList movies={movies} notFound={notFound} />
           </>}/>
           <Route path="/estrenos" element={<Estrenos />}/>
