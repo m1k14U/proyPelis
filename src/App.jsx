@@ -12,6 +12,7 @@ import Contactos from "./pages/Contactos";
 
 export default function App() {
   const [movies, setMovies] = useState([]);
+  const [notFound, setNotFound] = useState(false);
 
   async function searchMovies(query) {
     try {
@@ -24,12 +25,15 @@ export default function App() {
 
       if (res.data.Response === "True") {
         setMovies(res.data.Search);
+        setMovies(false);
       } else {
         setMovies([]);
+        setMovies(true);
       }
     } catch (error) {
       console.error("Error buscando películas:", error);
       setMovies([]);
+      setNotFound(true);
     }
   }
 
@@ -61,7 +65,7 @@ export default function App() {
           <Route path="/categorias" element={<Categorias />}/>
           <Route path="/contactos" element={<Contactos />}/>
         </Routes>
-        <MovieList movies={movies} />
+        <MovieList movies={movies} notFound={notFound} />
       </main>
     </div>
     </BrowserRouter>

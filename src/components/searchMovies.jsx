@@ -2,8 +2,8 @@
 import '../App.css';
 import personita from '../assets/personita.jpg'
 
-export default function MovieList({ movies }) {
-  if (!movies || movies.length === 0) {
+export default function MovieList({ movies, notFound }) {
+  if (!movies || (notFound)) {
     return (
       <main className='main'>
         <div className='img-contsinresult'>
